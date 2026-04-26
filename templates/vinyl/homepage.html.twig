@@ -1,0 +1,24 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+    {{ parent() }},
+    {{ title}}!!!
+{% endblock %}
+
+
+
+{% block body %}
+
+
+    {% block bodytitle %}
+        <h1 style="color:red;"> {{ title}} </h1>
+        {% include bodytitle_template ?? 'vinyl/_bodytitle.html.twig' %}
+    {% endblock %}
+    <div>
+        <ul>
+        {% for track in tracks %}
+            <li>  {{ track.singer }} : {{ track.song }} </li>
+        {% endfor %}
+        </ul>
+    </div>
+{% endblock %}
