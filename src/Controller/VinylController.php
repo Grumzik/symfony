@@ -14,12 +14,12 @@ class VinylController extends AbstractController
     #[Route('/')]
     public function homepage(): Response
     {
-        $title = 'Music shop';
+        $title = 'Music shop PB & Jams';
         $tracks = [
-            ['song' => 'Creep' , 'singer' => 'Radiohead'],
-            ['song' => 'Fantasy', 'singer' => 'Mariah Carey'],
-            ['song' => 'Облака', 'singer' => 'DDT'],
-            ['song' => 'Kiss from a Rose', 'singer' =>  'Seal']
+            ['song' => 'Creep' , 'artist' => 'Radiohead'],
+            ['song' => 'Fantasy', 'artist' => 'Mariah Carey'],
+            ['song' => 'Облака', 'artist' => 'DDT'],
+            ['song' => 'Kiss from a Rose', 'artist' =>  'Seal']
         ];
 
        return $this->render('vinyl/homepage.html.twig',
@@ -30,21 +30,9 @@ class VinylController extends AbstractController
     #[Route('/browse/{slug}')]
     public function browse(string $slug = null): Response
     {
-        if($slug){
-            $title = 'Genre: '.u(str_replace('-',' ', $slug)) -> title(true);
-        }else{
-            $title = 'All genres';
-        }
 
-
-        return new Response($title);
+        $genre = $slug? u(str_replace('-',' ', $slug)) -> title(true) : null;
+        return $this->render('vinyl/browse.html.twig', ['genre' => $genre]);
     }
 
-    #[Route('/vinyl/{slug}')]
-    public function show_vinyl(string $slug = null): Response
-    {
-
-
-        return new Response('music: '. $slug);
-    }
 }
