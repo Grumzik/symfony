@@ -17,9 +17,10 @@ class VinylController extends AbstractController
         $title = 'Music shop';
         $tracks = [
             ['song' => 'Creep' , 'singer' => 'Radiohead'],
-            ['song' => 'Fantasy', 'singer' => 'Mariah Carey']
+            ['song' => 'Fantasy', 'singer' => 'Mariah Carey'],
+            ['song' => 'Облака', 'singer' => 'DDT'],
+            ['song' => 'Kiss from a Rose', 'singer' =>  'Seal']
         ];
-
 
        return $this->render('vinyl/homepage.html.twig',
        ['title' => $title, 'tracks' => $tracks]);
