@@ -80,6 +80,20 @@
             "./config/routes.yaml"
         ]
     },
+    "symfony/stimulus-bundle": {
+        "version": "2.35",
+        "recipe": {
+            "repo": "github.com/symfony/recipes",
+            "branch": "main",
+            "version": "2.13",
+            "ref": "cef742b8d032ecf36f5da9386af91d012b5f5110"
+        },
+        "files": [
+            "./assets/bootstrap.js",
+            "./assets/controllers.json",
+            "./assets/controllers/song-controls_controller.js"
+        ]
+    },
     "symfony/twig-bundle": {
         "version": "6.4",
         "recipe": {
